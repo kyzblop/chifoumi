@@ -18,6 +18,7 @@ public class Check {
 	}
 
 	public int getScoreB() {
+		//
 		return scoreB;
 	}
 

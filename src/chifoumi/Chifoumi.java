@@ -10,6 +10,8 @@ public class Chifoumi {
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("Saisir le nombre de partie");
+		int nbPartie = Integer.parseInt(scan.nextLine());
+		
 		
 
 	}

@@ -14,17 +14,16 @@ public class Check {
 
 	public void setScoreA(int scoreA) {
 		this.scoreA = scoreA;
-		gagnant = "Jouer 1 gagnant";
+		gagnant = "Joueur 1 gagnant \n";
 	}
 
 	public int getScoreB() {
-		//
 		return scoreB;
 	}
 
 	public void setScoreB(int scoreB) {
 		this.scoreB = scoreB;
-		gagnant = "Jouer 2 gagnant";
+		gagnant = "Joueur 2 gagnant \n";
 	}
 
 	public String[] getFormes() {
@@ -37,7 +36,7 @@ public class Check {
 
 	public void checkWin(String formeA, String formeB) {
 		if (formeA.equals(formeB)) {
-			System.out.println("Match null");
+			System.out.println("Match null \n");
 			return;
 		}
 

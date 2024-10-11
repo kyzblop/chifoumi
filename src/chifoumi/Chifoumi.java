@@ -5,8 +5,7 @@ import java.util.Scanner;
 
 public class Chifoumi {
 	
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		System.out.println("Jeu du Chifoumi");
 		
 		Scanner scan = new Scanner(System.in);
@@ -21,34 +20,26 @@ public class Chifoumi {
 			regle = scan.nextLine().toUpperCase();
 		}
 		
-		Boolean isRegleFr;
-		
-		if(regle.equals("Y")) {
-			isRegleFr = true;
-		} else {
-			isRegleFr = false;
-		}
+		Boolean isRegleFr = regle.equals("Y");
 		
 		int nbPartie = 0;
 		// Definition du nombre de partie
 		boolean isValidChiffre = false;
 		while(!isValidChiffre) {
-			System.out.println("Saisir le nombre de partie");
-			
+			System.out.println("Saisir le nombre de partie");			
 			try {
 				nbPartie = Integer.parseInt(scan.nextLine());
 				isValidChiffre = true;
 			} catch(Exception e) {
 				System.out.println("Erreur de saisie");
 			}
-			
-		}
-		
+		}		
 		
 		Check check = new Check();
 		
 		for (int i=1; i<=nbPartie; i++) {
 			System.out.println("Partie n°"+i);
+			
 			// Joueur 1 
 			System.out.println("Joueur 1 : Jouez ! (P/F/C)");
 			String j1 = scan.nextLine().toUpperCase();
@@ -67,11 +58,9 @@ public class Chifoumi {
 				j2 = scan.nextLine().toUpperCase();
 			}			
 
-			check.checkWin(j1,j2); // chifoumi.formes[1], chifoumi.formes[0]);
 			System.out.println("Joueur 1 : " + (isRegleFr ? check.getScoreA() : check.getScoreB()));
 			System.out.println("Joueur 2 : " + (isRegleFr ? check.getScoreB() : check.getScoreA()));
-		}		
-
+			check.checkWin(j1,j2);
+		}
 	}
-
 }
